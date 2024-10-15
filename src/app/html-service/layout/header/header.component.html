@@ -1,0 +1,21 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title> <strong class="title"> {{ pageTitle }}</strong> <strong class="line"> | </strong> Griya Khitan
+      Humaira</ion-title>
+    <ion-buttons slot="start">
+      <div class="rounded-img">
+        <img src="../../assets/core/logo.png" alt="Logo" class="header-logo" />
+      </div>
+    </ion-buttons>
+    <ion-buttons class="border-btn" slot="end">
+      <ion-button (click)="onPresentPopover($event)">
+        <ion-icon class="green" name="notifications-outline"></ion-icon>
+      </ion-button>
+      <ion-popover #popover [animated]="true" [isOpen]="isOpen" (didDismiss)="isOpen = false">
+        <ng-template>
+          <app-notif></app-notif>
+        </ng-template>
+      </ion-popover>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
